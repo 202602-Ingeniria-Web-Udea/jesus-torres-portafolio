@@ -2,7 +2,7 @@
 
 Hoja de vida y portafolio personal desarrollado como **Proyecto evaluativo 1** del curso **Ingeniería Web** de la Universidad de Antioquia, semestre 2026-2, con el docente Juan Pablo Arango.
 
-**Sitio desplegado:** [[https://jesus-torres.vercel.app](https://jesus-torres-portafolio.vercel.app/)](https://jesus-torres.vercel.app/)
+**Sitio desplegado:** [[https://jesus-torres.vercel.app](https://jesus-torres-portafolio.vercel.app/)]
 
 ## Propósito
 
