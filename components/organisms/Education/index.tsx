@@ -7,6 +7,7 @@ const Education = () => {
     <section id="educacion" className="scroll-mt-24 flex flex-col gap-10">
       <SectionTitle
         title="Educación"
+        icon="mdi:school-outline"
         subtitle="Mi formación académica, desde la técnica laboral hasta la ingeniería, junto con los programas complementarios."
       />
       <div className="flex flex-col gap-6">

@@ -1,6 +1,7 @@
 export interface Skill {
   name: string;
   value: number;
+  icon?: string;
 }
 
 export interface ContactItem {

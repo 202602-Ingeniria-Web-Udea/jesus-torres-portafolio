@@ -27,6 +27,7 @@ const Portfolio = () => {
     <section id="portafolio" className="scroll-mt-24 flex flex-col gap-8">
       <SectionTitle
         title="Portafolio"
+        icon="mdi:briefcase-outline"
         subtitle="Algunos proyectos académicos y personales en los que he trabajado, desde aplicaciones web hasta modelos de datos y videojuegos."
       />
 

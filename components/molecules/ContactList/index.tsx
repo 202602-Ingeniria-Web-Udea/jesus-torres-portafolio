@@ -5,7 +5,7 @@ import { contactInfo } from "@/utils/data";
 const ContactList = () => {
   return (
     <div className="flex flex-col gap-3">
-      <SidebarTitle title="Contacto" />
+      <SidebarTitle title="Contacto" icon="mdi:card-account-details-outline" />
       {contactInfo.map((item) => (
         <div key={item.label} className="flex flex-row items-start gap-3 text-sm">
           <Icon icon={item.icon} className="w-5 h-5 shrink-0 text-primary dark:text-primary-light" />

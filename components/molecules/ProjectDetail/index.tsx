@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import Tag from "@/components/atoms/Tag";
+import { categoryIcons } from "@/utils/data";
 import { Project } from "@/utils/types";
 
 type Props = {
@@ -15,7 +16,7 @@ const ProjectDetail = ({ project }: Props) => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <Tag text={project.category} dark />
+        <Tag text={project.category} icon={categoryIcons[project.category]} dark />
         <h3 className="text-2xl font-bold text-negro dark:text-blanco">{project.title}</h3>
         <p className="leading-relaxed text-zinc-600 dark:text-zinc-300">{project.details}</p>
       </div>
@@ -31,7 +32,7 @@ const ProjectDetail = ({ project }: Props) => {
 
       <div className="flex flex-row flex-wrap gap-2">
         {project.technologies.map((technology) => (
-          <Tag key={technology} text={technology} />
+          <Tag key={technology} text={technology} icon="mdi:tag-outline" />
         ))}
       </div>
 
@@ -45,7 +46,7 @@ const ProjectDetail = ({ project }: Props) => {
               rel="noopener noreferrer"
               className="inline-flex flex-row items-center gap-2 rounded-xl bg-negro px-4 py-2 text-sm font-semibold text-blanco hover:bg-primary dark:bg-blanco dark:text-negro dark:hover:bg-primary-light transition duration-150"
             >
-              <Icon icon={link.url.includes("github") ? "mdi:github" : "mdi:open-in-new"} className="w-5 h-5" />
+              <Icon icon={link.url.includes("github.com") ? "mdi:github" : link.url.includes("itch.io") ? "simple-icons:itchdotio" : "mdi:open-in-new"} className="w-5 h-5" />
               {link.label}
             </a>
           ))}

@@ -46,18 +46,18 @@ const contactInfo: ContactItem[] = [
 ];
 
 const languages: Skill[] = [
-  { name: "Español", value: 100 },
-  { name: "Inglés", value: 50 },
+  { name: "Español", value: 100, icon: "mdi:translate" },
+  { name: "Inglés", value: 50, icon: "mdi:translate" },
 ];
 
 const programmingLanguages: Skill[] = [
-  { name: "SQL", value: 85 },
-  { name: "Python", value: 80 },
-  { name: "HTML y CSS", value: 80 },
-  { name: "JavaScript", value: 70 },
-  { name: "TypeScript", value: 60 },
-  { name: "Java", value: 60 },
-  { name: "C#", value: 40 },
+  { name: "SQL", value: 85, icon: "mdi:database-search-outline" },
+  { name: "Python", value: 80, icon: "mdi:language-python" },
+  { name: "HTML y CSS", value: 80, icon: "mdi:language-html5" },
+  { name: "JavaScript", value: 70, icon: "mdi:language-javascript" },
+  { name: "TypeScript", value: 60, icon: "mdi:language-typescript" },
+  { name: "Java", value: 60, icon: "mdi:language-java" },
+  { name: "C#", value: 40, icon: "mdi:language-csharp" },
 ];
 
 const extraSkills: string[] = [
@@ -77,6 +77,11 @@ const socialLinks: SocialLink[] = [
     name: "LinkedIn",
     icon: "mdi:linkedin",
     url: "https://www.linkedin.com/in/jesustorresq",
+  },
+  {
+    name: "itch.io",
+    icon: "simple-icons:itchdotio",
+    url: "https://jisust.itch.io/",
   },
   {
     name: "WhatsApp",
@@ -150,6 +155,14 @@ const education: Education[] = [
     type: "Formal",
   },
   {
+    institution: "Smart4AI - Ruta N",
+    title: "Bootcamp Fundamentos de Claude Aplicados",
+    dates: "2026",
+    description:
+      "Bootcamp de 12 horas sobre el uso aplicado de Claude: prompts y proyectos, artefactos, skills, conectores, automatizaciones, agentes y Claude Code.",
+    type: "Complementaria",
+  },
+  {
     institution: "Instituto Tecnológico Metropolitano (ITM)",
     title: "Ingeniería de Sistemas",
     dates: "2023",
@@ -162,7 +175,7 @@ const education: Education[] = [
     title: "Bootcamp Desarrollador Junior de Unity",
     dates: "2023",
     description:
-      "Bootcamp en alianza con Unity y el Bogotá Institute of Technology. Desarrollo de videojuegos con C#, físicas, animaciones y shaders.",
+      "Bootcamp en alianza con Unity y el Bogotá Institute of Technology. Desarrollo de videojuegos con C#, físicas, animaciones y shaders. Mis juegos están publicados en itch.io.",
     type: "Complementaria",
   },
   {
@@ -214,6 +227,13 @@ const projectCategories: ProjectCategory[] = [
   "Videojuegos",
 ];
 
+const categoryIcons: Record<ProjectCategory, string> = {
+  Web: "mdi:web",
+  "Datos e IA": "mdi:brain",
+  Calidad: "mdi:check-decagram-outline",
+  Videojuegos: "mdi:gamepad-variant-outline",
+};
+
 const projects: Project[] = [
   {
     id: "planeai",
@@ -230,7 +250,12 @@ const projects: Project[] = [
       "Desplegado en Vercel y Render",
     ],
     technologies: ["Python", "FastAPI", "Pydantic", "Gemini"],
-    links: [{ label: "Perfil de GitHub", url: "https://github.com/JisusTQ" }],
+    links: [
+      {
+        label: "Ver aplicación",
+        url: "https://planeai-udea-wkae-git-main-ana-granadas-projects.vercel.app/",
+      },
+    ],
   },
   {
     id: "saber-pro",
@@ -275,27 +300,14 @@ const projects: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript", "PokéAPI"],
     links: [
       {
-        label: "Organización del curso",
-        url: "https://github.com/202602-Ingeniria-Web-Udea",
+        label: "Ver aplicación",
+        url: "https://202602-ingeniria-web-udea.github.io/taller-html-jesus-estiven-torres-quintero/",
+      },
+      {
+        label: "Repositorio",
+        url: "https://github.com/202602-Ingeniria-Web-Udea/taller-html-jesus-estiven-torres-quintero",
       },
     ],
-  },
-  {
-    id: "miplata",
-    title: "MiPlata",
-    image: "/proyectos/miplata.svg",
-    category: "Web",
-    summary:
-      "Aplicación personal para llevar el control de ingresos, gastos y préstamos.",
-    details:
-      "Aplicación en React para registrar ingresos de varias fuentes, gastos, préstamos con abonos parciales y compras a cuotas con tarjeta de crédito. Muestra indicadores generales y una gráfica filtrada por mes.",
-    highlights: [
-      "Indicadores y gráficas por periodo",
-      "Seguimiento de abonos y cuotas",
-      "Diseño adaptable a celular",
-    ],
-    technologies: ["React", "JavaScript", "Tailwind CSS"],
-    links: [],
   },
   {
     id: "colombian-league",
@@ -336,6 +348,7 @@ const projects: Project[] = [
     technologies: ["Unity", "C#", "ShaderLab"],
     links: [
       { label: "Repositorio", url: "https://github.com/JisusTQ/LayingLow" },
+      { label: "Portafolio en itch.io", url: "https://jisust.itch.io/" },
     ],
   },
   {
@@ -373,5 +386,6 @@ export {
   knowledge,
   education,
   projectCategories,
+  categoryIcons,
   projects,
 };

@@ -7,6 +7,7 @@ const Knowledge = () => {
     <section id="conocimientos" className="scroll-mt-24 flex flex-col gap-10">
       <SectionTitle
         title="Conocimientos"
+        icon="mdi:lightbulb-outline"
         subtitle="Las áreas en las que he trabajado tanto en la universidad como en mi experiencia laboral."
       />
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

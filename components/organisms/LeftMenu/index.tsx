@@ -11,11 +11,11 @@ const LeftMenu = () => {
       <hr className="border-zinc-200 dark:border-zinc-800" />
       <ContactList />
       <hr className="border-zinc-200 dark:border-zinc-800" />
-      <ProgressList title="Idiomas" items={languages} />
+      <ProgressList title="Idiomas" icon="mdi:earth" items={languages} />
       <hr className="border-zinc-200 dark:border-zinc-800" />
-      <ProgressList title="Lenguajes de programación" items={programmingLanguages} />
+      <ProgressList title="Lenguajes de programación" icon="mdi:code-tags" items={programmingLanguages} />
       <hr className="border-zinc-200 dark:border-zinc-800" />
-      <SkillList title="Habilidades extra" items={extraSkills} />
+      <SkillList title="Habilidades extra" icon="mdi:star-four-points-outline" items={extraSkills} />
     </div>
   );
 };

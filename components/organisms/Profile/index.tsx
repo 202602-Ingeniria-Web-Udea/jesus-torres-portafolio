@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@iconify/react";
 import { useState } from "react";
 import Avatar from "@/components/atoms/Avatar";
 import Button from "@/components/atoms/Button";
@@ -15,15 +16,21 @@ const Profile = () => {
     <section id="perfil" className="scroll-mt-24 rounded-3xl bg-blanco p-8 md:p-12 shadow-sm dark:bg-panel-oscuro animate-aparecer">
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-10">
         <div className="flex flex-col gap-5 max-w-2xl">
-          <span className="text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+          <span className="inline-flex flex-row items-center gap-2 text-sm font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+            <Icon icon="mdi:hand-wave-outline" className="w-5 h-5" />
             Hola, soy
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-negro dark:text-blanco">
             {personalInfo.name}
           </h2>
           <div className="flex flex-row flex-wrap gap-2">
-            {personalInfo.titles.map((title) => (
-              <Tag key={title} text={title} dark />
+            {personalInfo.titles.map((title, index) => (
+              <Tag
+                key={title}
+                text={title}
+                icon={index === 0 ? "mdi:school-outline" : "mdi:database-outline"}
+                dark
+              />
             ))}
           </div>
           <p className="leading-relaxed text-zinc-600 dark:text-zinc-300">{personalInfo.profile}</p>

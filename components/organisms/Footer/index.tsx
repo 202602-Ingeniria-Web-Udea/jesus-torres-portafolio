@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 import SocialList from "@/components/molecules/SocialList";
 import { personalInfo } from "@/utils/data";
@@ -14,9 +15,10 @@ const Footer = () => {
       <SocialList />
       <Link
         href="#perfil"
-        className="text-sm font-medium text-zinc-500 hover:text-negro dark:text-zinc-400 dark:hover:text-blanco"
+        className="inline-flex flex-row items-center gap-1 text-sm font-medium text-zinc-500 hover:text-negro dark:text-zinc-400 dark:hover:text-blanco"
       >
         Volver arriba
+        <Icon icon="mdi:arrow-up" className="w-4 h-4" />
       </Link>
     </footer>
   );

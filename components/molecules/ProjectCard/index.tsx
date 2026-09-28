@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "@/components/atoms/Button";
 import Tag from "@/components/atoms/Tag";
+import { categoryIcons } from "@/utils/data";
 import { Project } from "@/utils/types";
 
 type Props = {
@@ -15,7 +16,7 @@ const ProjectCard = ({ project, onOpen }: Props) => {
         <Image src={project.image} alt={project.title} fill className="object-cover" />
       </div>
       <div className="flex flex-col flex-1 gap-3 p-6">
-        <Tag text={project.category} />
+        <Tag text={project.category} icon={categoryIcons[project.category]} />
         <h3 className="text-lg font-semibold text-negro dark:text-blanco">{project.title}</h3>
         <p className="flex-1 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
           {project.summary}
