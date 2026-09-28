@@ -7,7 +7,13 @@ import Button from "@/components/atoms/Button";
 import Tag from "@/components/atoms/Tag";
 import HireDialog from "@/components/molecules/HireDialog";
 import Modal from "@/components/molecules/Modal";
-import { personalInfo } from "@/utils/data";
+import { education, personalInfo, projects } from "@/utils/data";
+
+const stats = [
+  { value: "8.º", label: "Semestre" },
+  { value: `${projects.length}`, label: "Proyectos" },
+  { value: `${education.length}`, label: "Formaciones" },
+];
 
 const Profile = () => {
   const [openHire, setOpenHire] = useState(false);
@@ -37,6 +43,14 @@ const Profile = () => {
           <div className="flex flex-row flex-wrap gap-3">
             <Button text="Contrátame" icon="mdi:arrow-right" onClick={() => setOpenHire(true)} />
             <Button text="Ver proyectos" variant="outline" href="#portafolio" />
+          </div>
+          <div className="flex flex-row gap-8 pt-2">
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col">
+                <span className="text-3xl font-extrabold text-negro dark:text-blanco">{stat.value}</span>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
         <div className="shrink-0">

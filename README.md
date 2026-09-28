@@ -2,7 +2,7 @@
 
 Hoja de vida y portafolio personal desarrollado como **Proyecto evaluativo 1** del curso **Ingeniería Web (2554435)** de la Universidad de Antioquia, semestre 2026-2, con el docente Juan Pablo Arango.
 
-**Sitio desplegado:** https://jesus-torres.vercel.app
+**Sitio desplegado:** https://jesus-torres-portafolio.vercel.app
 
 ## Propósito
 
@@ -30,7 +30,12 @@ El objetivo del proyecto es aplicar el proceso de desarrollo frontend con Next.j
 
 ## Funcionalidades adicionales
 
-- Modo oscuro con `useState` y la variante `dark` de Tailwind.
+- Modo oscuro con la variante `dark` de Tailwind, guardado en el navegador para la próxima visita.
+- Barra de progreso de lectura en la parte superior.
+- Resaltado en el menú de la sección que se está viendo (`IntersectionObserver`).
+- Aparición de las secciones al hacer scroll.
+- Cifras destacadas en el perfil calculadas a partir de los datos.
+- Cierre de los diálogos con la tecla Escape.
 - Filtro de proyectos por categoría.
 - Carrusel con botones para desplazar las tarjetas del portafolio.
 - Animaciones: barras de porcentaje que crecen al cargar, aparición de secciones, efectos `hover` y entrada de los diálogos.
@@ -45,7 +50,8 @@ app/
   layout.tsx         Plantilla base con los menús fijos
   page.tsx           Página principal que ensambla los organismos
 components/
-  atoms/             Avatar, Button, IconLink, ProgressBar, SectionTitle, SidebarTitle, Tag, ThemeToggle
+  atoms/             Avatar, Button, IconLink, ProgressBar, Reveal, ScrollProgress, SectionTitle,
+                     SidebarTitle, Tag, ThemeToggle
   molecules/         ContactList, EducationCard, FilterTabs, HireDialog, KnowledgeCard, Modal,
                      NavIcons, ProfileCard, ProgressList, ProjectCard, ProjectDetail, SkillList, SocialList
   organisms/         Education, Footer, Knowledge, LeftMenu, MobileNavbar, Portfolio, Profile, RightMenu
@@ -70,6 +76,7 @@ Cada componente vive en una carpeta con su propio `index.tsx`, y la información
 | `SectionTitle` | Átomo | Conocimientos, educación y portafolio |
 | `IconLink` | Átomo | Redes sociales en el menú derecho, menú móvil y footer |
 | `ThemeToggle` | Átomo | Menú derecho y barra móvil |
+| `Reveal` | Átomo | Secciones de conocimientos, educación y portafolio |
 | `ProgressList` | Molécula | Idiomas y lenguajes de programación |
 | `Modal` | Molécula | Diálogo de contacto y detalle de proyectos |
 | `SocialList` | Molécula | Menú derecho, menú móvil y footer |

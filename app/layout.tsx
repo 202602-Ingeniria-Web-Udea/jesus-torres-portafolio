@@ -3,6 +3,7 @@ import "./globals.css";
 import LeftMenu from "@/components/organisms/LeftMenu";
 import MobileNavbar from "@/components/organisms/MobileNavbar";
 import RightMenu from "@/components/organisms/RightMenu";
+import ScrollProgress from "@/components/atoms/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "Jesús Torres | Portafolio",
@@ -16,8 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        {/* Aplica el tema guardado antes de pintar la página para evitar un parpadeo */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("tema")==="oscuro")document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased bg-fondo text-negro dark:bg-fondo-oscuro dark:text-blanco transition-colors duration-300">
+        <ScrollProgress />
+
         {/* En pantallas grandes se muestran los dos menús fijos; en celular, la barra superior */}
         <div className="block lg:hidden">
           <MobileNavbar />

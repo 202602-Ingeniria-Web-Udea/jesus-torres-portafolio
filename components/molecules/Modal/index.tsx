@@ -1,6 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import { useEffect } from "react";
 
 type Props = {
   open: boolean;
@@ -9,6 +10,15 @@ type Props = {
 };
 
 const Modal = ({ open, onClose, children }: Props) => {
+  // Permite cerrar el modal con la tecla Escape
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    if (open) window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [open, onClose]);
+
   if (!open) return null;
 
   return (
